@@ -1,1 +1,1 @@
-worker: python Clinton.py
+worker: python clinton.py
