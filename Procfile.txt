@@ -1,1 +1,1 @@
-worker: python Kinshin.py
+worker: python Clinton.py
