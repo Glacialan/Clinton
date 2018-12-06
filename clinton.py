@@ -17,6 +17,23 @@ mainColor = 0x8ffc64
 # - - - - -
 
 @client.event
+async def on_message(message):
+    if message.content.lower().startswith('HI'):
+           await client.send_message(message.channel, 'Hello!')
+
+
+
+
+
+
+
+
+
+
+
+# - - - - -
+
+@client.event
 async def on_ready():
     await client.change_presence(game=discord.Game(name="USSR Propaganda", type=3))
     print("Bot Status: Online")
@@ -82,10 +99,10 @@ async def role(ctx, *args):
 
 # - - - - -
 
-async def spam():
-    while(True):
-        await client.say('Hi, Im Clinton')
+
+
+
 
 # - - - - -
-client.loop.create_task(spam()) 
+
 client.run(os.getenv('TOKEN'))
