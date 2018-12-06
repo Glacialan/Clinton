@@ -36,7 +36,7 @@ async def clear(ctx, number):
 # - - - - -
 
 @client.command(pass_context=True)
-async def help(ctx):
+async def  help(ctx):
         author = ctx.message.author
 
         embed = discord.Embed(
@@ -51,5 +51,12 @@ async def help(ctx):
         
 # - - - - -
 
+@client.command(pass_context=True)
+async def channel-create(ctx, *args):
+       server = ctx.message.server
+        name =  ' '.join(args)
+    await client.create_channel(server, name, type=discord.ChannelType.text)
 
+
+# - - - - -
 client.run(os.getenv('TOKEN'))
