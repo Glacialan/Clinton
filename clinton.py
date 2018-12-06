@@ -55,10 +55,15 @@ async def  help(ctx):
 
 @client.command(pass_context=True)
 async def text(ctx, *args):
+    channel = ctx.message.channel
     server = ctx.message.server
     name = ' '.join(args)
     await client.create_channel(server, name, type=discord.ChannelType.text)
-
-
+    
+    embed = discord.Embed(
+            color = mainColor   
+    )
+    embed.set_author(name='Channel Created!')
+    await client.say(embed=embed)
 # - - - - -
 client.run(os.getenv('TOKEN'))
