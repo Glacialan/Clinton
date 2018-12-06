@@ -57,7 +57,7 @@ async def  help(ctx):
 async def text(ctx, *args):
     server = ctx.message.server
     name = ' '.join(args)
-            await client.create_channel(server, name, type=discord.ChannelType.text)
+    await client.create_channel(server, name, type=discord.ChannelType.text)
 
 
 # - - - - -
