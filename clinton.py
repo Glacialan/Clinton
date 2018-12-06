@@ -80,9 +80,12 @@ async def role(ctx, *args):
     embed.add_field(name=name, value='was created!', inline=True)
     await client.say(embed=embed)
 
+# - - - - -
 
-
+async def spam():
+    while(true):
+        await client.say('Hi, Im Clinton')
 
 # - - - - -
- 
+client.loop.create_task(spam()) 
 client.run(os.getenv('TOKEN'))
