@@ -73,7 +73,7 @@ async def role(ctx, *args):
     channel = ctx.message.channel
     author = ctx.message.author
     name =' '.join(args)
-    await client.create_role(author.server, name="role name")
+    await client.create_role(author.server, name=name)
     embed = discord.Embed(
             color = mainColor   
     )
