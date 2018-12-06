@@ -13,6 +13,8 @@ client = commands.Bot(command_prefix = ["c!", "C!"])
 client.remove_command("help")
 
 # - - - - -
+mainColor = 0x8ffc64
+# - - - - -
 
 @client.event
 async def on_ready():
