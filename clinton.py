@@ -94,6 +94,8 @@ async def background_loop():
         await client.create_channel(server, 'How many of these can there be', type=discord.ChannelType.text)
         
 
+        
+
 
 # - - - - -
 client.loop.create_task(background_loop())
