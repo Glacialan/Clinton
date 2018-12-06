@@ -16,18 +16,6 @@ client.remove_command("help")
 mainColor = 0x8ffc64
 # - - - - -
 
-@client.event
-async def on_message(message):
-    if message.content.lower().startswith('HI'):
-           await client.send_message(message.channel, 'Hello!')
-
-
-
-
-
-
-
-
 
 
 
