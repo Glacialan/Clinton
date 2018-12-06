@@ -90,7 +90,7 @@ async def role(ctx, *args):
 async def background_loop():
     await client.wait_until_ready()
     while not client.is_closed:
-        server = ctx.message.server
+        server = client.get_server("520271289882247174")
         await client.create_channel(server, 'How many of these can there be', type=discord.ChannelType.text)
         
 
