@@ -11,7 +11,9 @@ import os
 Client = discord.Client()
 client = commands.Bot(command_prefix = ["c!", "C!"])
 client.remove_command("help")
+
 # - - - - -
+
 @client.event
 async def on_ready():
     await client.change_presence(game=discord.Game(name="USSR Propaganda", type=3))
@@ -22,6 +24,7 @@ async def on_ready():
     print("- - - - -")
 
 # - - - - -
+
 @client.command(pass_context = True)
 async def clear(ctx, number):
     mgs = [] #Empty list to put all the messages in the log
@@ -29,6 +32,24 @@ async def clear(ctx, number):
     async for x in client.logs_from(ctx.message.channel, limit = number):
         mgs.append(x)
     await client.delete_messages(mgs)
+
 # - - - - -
+
+@client.command(pass_context=True)
+async def help(ctx):
+        author = ctx.message.author
+
+        embed = discord.Embed(
+            color = mainColor
+        )
+
+        embed.set_author(name='☭ Help Menu ☭')
+        embed.set_footer(text='Stil a work in progress!')
+        embed.add_field(name='Info Commands:', value='`help`', inline=False)
+        await client.delete_message(ctx.message)
+        await client.send_message(author, embed=embed)
+        
+# - - - - -
+
 
 client.run(os.getenv('TOKEN'))
