@@ -83,7 +83,7 @@ async def role(ctx, *args):
 # - - - - -
 
 async def spam():
-    while(true):
+    while(True):
         await client.say('Hi, Im Clinton')
 
 # - - - - -
