@@ -65,5 +65,24 @@ async def text(ctx, *args):
     )
     embed.set_author(name='Channel Created!')
     await client.say(embed=embed)
+    
 # - - - - -
+
+@client.command(pass_context=True)
+async def role(ctx, *args):
+    channel = ctx.message.channel
+    author = ctx.message.author
+    name =' '.join(args)
+    await client.create_role(author.server, name="role name")
+    embed = discord.Embed(
+            color = mainColor   
+    )
+    embed.add_field(name=name, value='was created!', inline=True)
+    await client.say(embed=embed)
+
+
+
+
+# - - - - -
+ 
 client.run(os.getenv('TOKEN'))
