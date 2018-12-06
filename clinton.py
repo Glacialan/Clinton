@@ -9,12 +9,12 @@ import time
 import os
 
 Client = discord.Client()
-client = commands.Bot(command_prefix = ["k!", "K!"])
+client = commands.Bot(command_prefix = ["c!", "C!"])
 client.remove_command("help")
 # - - - - -
 @client.event
 async def on_ready():
-    await client.change_presence(game=discord.Game(name="Hentai Only For The Plot", type=3))
+    await client.change_presence(game=discord.Game(name="USSR Propaganda", type=3))
     print("Bot Status: Online")
     print(" ")
     print("Logged in as: " + client.user.name)
