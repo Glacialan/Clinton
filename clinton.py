@@ -58,45 +58,9 @@ async def  help(ctx):
         
 # - - - - -
 
-@client.command(pass_context=True)
-async def text(ctx, *args):
-    channel = ctx.message.channel
-    server = ctx.message.server
-    name = ' '.join(args)
-    await client.create_channel(server, name, type=discord.ChannelType.text)
-    
-    embed = discord.Embed(
-            color = mainColor   
-    )
-    embed.set_author(name='Channel Created!')
-    await client.say(embed=embed)
     
 # - - - - -
 
-@client.command(pass_context=True)
-async def role(ctx, *args):
-    channel = ctx.message.channel
-    author = ctx.message.author
-    name =' '.join(args)
-    await client.create_role(author.server, name=name)
-    embed = discord.Embed(
-            color = mainColor   
-    )
-    embed.add_field(name=name, value='was created!', inline=True)
-    await client.say(embed=embed)
 
 # - - - - -
-
-async def background_loop():
-    await client.wait_until_ready()
-    while not client.is_closed:
-        server = client.get_server("520271289882247174")
-        await client.create_channel(server, 'How many of these can there be', type=discord.ChannelType.text)
-        
-
-        
-
-
-# - - - - -
-client.loop.create_task(background_loop())
 client.run(os.getenv('TOKEN'))
