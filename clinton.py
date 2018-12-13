@@ -20,7 +20,7 @@ mainColor = 0x8ffc64
 
 @client.event
 async def on_ready():
-    await client.change_presence(game=discord.Game(name="USSR Propaganda", type=3))
+    await client.change_presence(game=discord.Game(name="You Through Your Webcam", type=3))
     print("Bot Status: Online")
     print(" ")
     print("Logged in as: " + client.user.name)
@@ -46,7 +46,7 @@ async def warn(ctx, user: discord.Member, *args):
     await client.delete_message(ctx.message)
     await client.send_message(user, embed=embed)
     await client.send_message(author, '{} has been warned!!'.format(user))
-    await client.send_message(author, 'For: {reason}')
+    await client.send_message(author, 'For: {}'.format(reason))
                               
 # - - - - -
 
