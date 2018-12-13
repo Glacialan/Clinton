@@ -48,6 +48,38 @@ async def warn(ctx, user: discord.Member, *args):
     await client.send_message(author, '{} has been warned!!'.format(user))
     await client.send_message(author, 'For: {}'.format(reason))
                               
+        
+# - - - - -        
+        
+#Kick
+@client.command(pass_context=True)
+@commands.has_permissions(kick_members=True)
+async def kick(ctx, user: discord.Member):
+    author = ctx.message.author.name
+    await client.kick(user)
+
+    embed = discord.Embed(
+        description='**Kick Alert**'.format(user.name),
+        color = 0xffa499
+
+    )
+
+    embed.add_field(name='User Kicked:', value='*{}*'.format(user.name), inline=True)
+    embed.add_field(name='Kicked By:', value='*{}*'.format(author), inline=True)
+
+    await client.delete_message(ctx.message)
+    await client.say(embed=embed)
+   
+# - - - - -
+
+#Say (For Owner Only)
+@client.command(pass_context=True)
+async def say(ctx, *args):
+    if ctx.message.author.id == '171335165476470784':
+        mesg = ' '.join(args)
+        await client.delete_message(ctx.message)
+        return await client.say(mesg)
+
 # - - - - -
 
 @client.command(pass_context=True)
