@@ -20,7 +20,7 @@ mainColor = 0x8ffc64
 
 @client.event
 async def on_ready():
-    await client.change_presence(game=discord.Game(name="You Through Your Webcam", type=3))
+    await client.change_presence(game=discord.Game(name="Through Your Webcam", type=3))
     print("Bot Status: Online")
     print(" ")
     print("Logged in as: " + client.user.name)
