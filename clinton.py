@@ -50,7 +50,11 @@ async def  help(ctx):
         
 # - - - - -
 
-    
+@client.event
+async def on_message(message):
+    if "dumb" in message.content:
+        await client.say("Uh, no?")
+
 # - - - - -
 
 
