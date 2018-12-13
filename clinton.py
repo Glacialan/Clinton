@@ -43,18 +43,11 @@ async def  help(ctx):
         )
 
         embed.set_author(name='☭ Help Menu ☭')
-        embed.set_footer(text='Stil a work in progress!')
-        embed.add_field(name='Info Commands:', value='`help`', inline=False)
+        embed.set_footer(text='Clinton Bot')
+        embed.add_field(name='Moderation ⚙️:', value='`help`', inline=False)
         await client.delete_message(ctx.message)
         await client.send_message(author, embed=embed)
         
-# - - - - -
-
-@client.event
-async def on_message(message):
-    if "DUMB" in message.content:
-        await client.say("Uh, no?")
-
 # - - - - -
 
 
