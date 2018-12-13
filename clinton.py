@@ -28,6 +28,7 @@ async def on_ready():
     print("- - - - -")
 
 # - - - - -
+
 #Warn
 @client.command(pass_context=True)
 @commands.has_permissions(kick_members=True)
@@ -46,10 +47,11 @@ async def warn(ctx, user: discord.Member, *args):
     await client.send_message(user, embed=embed)
     await client.send_message(author, '{} has been warned!!'.format(user))
     await client.send_message(author, 'For: {reason}'
+                              
 # - - - - -
 
 @client.command(pass_context=True)
-async def  help(ctx):
+async def help(ctx):
         author = ctx.message.author
 
         embed = discord.Embed(
