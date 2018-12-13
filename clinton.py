@@ -46,7 +46,7 @@ async def  help(ctx):
         embed.set_footer(text='Clinton Bot')
         embed.add_field(name='Moderation ⚙️:', value='`help`', inline=False)
         await client.delete_message(ctx.message)
-        await client.send_message(author, embed=embed)
+        await client.say(embed=embed)
         
 # - - - - -
 
